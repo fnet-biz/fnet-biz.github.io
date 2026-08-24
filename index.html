@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="有限会社エフネットは、不動産賃貸業を基盤に、空き家・空室・遊休不動産の活用と、長期的な資産価値の向上に取り組んでいます。">
+<title>有限会社エフネット｜眠る不動産を、新たな資産へ。</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230c1422'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='30' font-family='Georgia' fill='%23e4d5b7'%3EF%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#121722;
+  --navy:#16243a;
+  --navy-2:#0c1422;
+  --blue:#2d5d85;
+  --gold:#b99a5f;
+  --gold-2:#e4d5b7;
+  --mist:#f3f6f8;
+  --paper:#ffffff;
+  --soft:#e4e9ef;
+  --text:#4f5a68;
+  --line:rgba(22,36,58,.13);
+  --shadow:0 24px 70px rgba(12,20,34,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.85;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,input,textarea{font:inherit}
+.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  margin:0 0 14px;
+  color:var(--gold);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.eyebrow::before{content:"";width:32px;height:1px;background:currentColor}
+.section-title{
+  margin:0;
+  color:var(--navy-2);
+  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+  font-size:clamp(28px,4vw,44px);
+  line-height:1.35;
+}
+.section-lead{max-width:680px;margin:18px 0 0;color:var(--text);font-size:15px}
+.site-header{
+  position:fixed;
+  inset:0 0 auto;
+  z-index:20;
+  border-bottom:1px solid rgba(255,255,255,.13);
+  background:rgba(12,20,34,.72);
+  backdrop-filter:blur(18px);
+  color:#fff;
+}
+.nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:210px;
+  font-weight:800;
+}
+.brand-mark{
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(228,213,183,.42);
+  background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.03));
+  color:var(--gold-2);
+  font-family:Georgia,serif;
+  font-size:17px;
+}
+.brand small{display:block;color:rgba(255,255,255,.58);font-size:10px;letter-spacing:.18em}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:13px;color:rgba(255,255,255,.78)}
+.nav-links a{padding:8px 0;border-bottom:1px solid transparent}
+.nav-links a:hover,.nav-links a:focus-visible{color:#fff;border-color:var(--gold)}
+.nav-cta{
+  padding:10px 16px!important;
+  border:1px solid rgba(228,213,183,.55)!important;
+  color:#fff!important;
+}
+.hero{
+  position:relative;
+  min-height:760px;
+  overflow:hidden;
+  display:flex;
+  align-items:stretch;
+  background:var(--navy-2);
+  color:#fff;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(105deg,rgba(12,20,34,.96) 0%,rgba(12,20,34,.9) 39%,rgba(12,20,34,.52) 68%,rgba(12,20,34,.24) 100%),
+    linear-gradient(0deg,rgba(12,20,34,.95),rgba(12,20,34,0) 35%);
+  z-index:1;
+}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  filter:saturate(.75) contrast(1.05);
+}
+.hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 390px;
+  gap:60px;
+  align-items:end;
+  padding:154px 0 74px;
+}
+.hero-copy{max-width:720px}
+.hero h1{
+  margin:0;
+  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+  font-size:clamp(38px,5.2vw,64px);
+  line-height:1.18;
+  font-weight:700;
+}
+.hero h1 span{color:var(--gold-2)}
+.hero-lead{
+  margin:28px 0 0;
+  max-width:650px;
+  color:rgba(255,255,255,.82);
+  font-size:17px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:12px 22px;
+  border:1px solid transparent;
+  background:var(--navy);
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--gold);color:#111827}
+.btn-primary:hover{background:#d1b476}
+.btn:disabled{cursor:not-allowed;opacity:.58;transform:none}
+.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid #e4d5b7;outline-offset:3px}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.35)}
+.hero-panel{
+  align-self:end;
+  border:1px solid rgba(228,213,183,.3);
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(16px);
+  box-shadow:var(--shadow);
+}
+.panel-row{padding:22px 24px;border-bottom:1px solid rgba(255,255,255,.12)}
+.panel-row:last-child{border-bottom:0}
+.panel-label{display:block;color:var(--gold-2);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.panel-value{display:block;margin-top:4px;color:#fff;font-size:18px;font-weight:800}
+.panel-note{display:block;margin-top:6px;color:rgba(255,255,255,.64);font-size:12px;line-height:1.6}
+.trust-strip{
+  position:relative;
+  z-index:3;
+  margin-top:-1px;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-left:1px solid var(--line);
+}
+.trust-item{
+  min-height:126px;
+  padding:28px 24px;
+  border-right:1px solid var(--line);
+}
+.trust-item b{display:block;color:var(--navy);font-size:24px;font-family:Georgia,serif}
+.trust-item strong{display:block;margin-top:8px;color:var(--navy-2);font-size:14px}
+.trust-item span{display:block;margin-top:6px;color:var(--text);font-size:12px;line-height:1.65}
+section{padding:104px 0}
+section[id]{scroll-margin-top:116px}
+.split{
+  display:grid;
+  grid-template-columns:.88fr 1.12fr;
+  gap:70px;
+  align-items:start;
+}
+.sticky-copy{position:sticky;top:116px}
+.image-stack{
+  display:grid;
+  grid-template-columns:1fr .72fr;
+  gap:18px;
+  align-items:end;
+}
+.image-card{
+  position:relative;
+  overflow:hidden;
+  min-height:390px;
+  background:var(--mist);
+  box-shadow:var(--shadow);
+}
+.image-card.small{min-height:270px;margin-bottom:42px}
+.image-card img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.86) contrast(1.02)}
+.image-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(12,20,34,0),rgba(12,20,34,.38));
+}
+.statement{
+  margin-top:28px;
+  padding:28px 0 0;
+  border-top:1px solid var(--line);
+  color:var(--text);
+}
+.process{
+  background:var(--mist);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  margin-top:46px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.process-card{
+  background:#fff;
+  min-height:270px;
+  padding:30px 24px;
+}
+.process-card .num{color:var(--gold);font-family:Georgia,serif;font-size:30px}
+.process-card h3{margin:18px 0 10px;color:var(--navy);font-size:18px}
+.process-card p{margin:0;color:var(--text);font-size:14px}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  margin-top:48px;
+}
+.service-card{
+  position:relative;
+  min-height:460px;
+  overflow:hidden;
+  background:var(--navy);
+  color:#fff;
+}
+.service-card img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:saturate(.72) contrast(1.05);
+  transition:transform .8s ease;
+}
+.service-card:hover img{transform:scale(1.06)}
+.service-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(12,20,34,.12),rgba(12,20,34,.88) 72%,rgba(12,20,34,.97));
+}
+.service-content{
+  position:absolute;
+  inset:auto 0 0;
+  z-index:1;
+  padding:32px;
+}
+.service-content span{color:var(--gold-2);font-size:12px;font-weight:800;letter-spacing:.14em}
+.service-content h3{margin:12px 0 12px;font-size:22px}
+.service-content p{margin:0;color:rgba(255,255,255,.77);font-size:14px}
+.case-section{background:var(--navy-2);color:#fff;overflow:hidden}
+.case-section .section-title{color:#fff}
+.case-section .section-lead{color:rgba(255,255,255,.68)}
+.case-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:54px;
+  align-items:center;
+}
+.case-photo{
+  min-height:560px;
+  position:relative;
+  overflow:hidden;
+}
+.case-photo img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.78) contrast(1.06)}
+.case-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(12,20,34,.04),rgba(12,20,34,.5))}
+.case-list{margin-top:34px;display:grid;gap:14px}
+.case-item{
+  display:grid;
+  grid-template-columns:86px 1fr;
+  gap:18px;
+  padding:20px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);
+}
+.case-item b{color:var(--gold-2);font-family:Georgia,serif;font-size:20px}
+.case-item h3{margin:0 0 4px;font-size:17px}
+.case-item p{margin:0;color:rgba(255,255,255,.68);font-size:13px}
+.company-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:58px;
+  align-items:start;
+}
+.profile-box{
+  border-top:2px solid var(--navy);
+  background:#fff;
+}
+.profile-row{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:22px;
+  padding:19px 0;
+  border-bottom:1px solid var(--line);
+}
+.profile-row dt{margin:0;color:var(--navy);font-weight:800}
+.profile-row dd{margin:0;color:var(--text)}
+.policy-box{
+  padding:34px;
+  background:var(--mist);
+  border:1px solid var(--line);
+}
+.policy-box h3{margin:0 0 18px;color:var(--navy);font-size:22px}
+.policy-list{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.policy-list li{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  color:var(--text);
+  font-size:14px;
+}
+.policy-list li::before{
+  content:"";
+  width:9px;
+  height:9px;
+  margin-top:12px;
+  background:var(--gold);
+  flex:0 0 auto;
+}
+.contact{
+  position:relative;
+  overflow:hidden;
+  background:var(--navy-2);
+  color:#fff;
+}
+.contact::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url("hero-handshake.jpg") center/cover;
+  opacity:.16;
+  filter:saturate(.7);
+}
+.contact .wrap{position:relative;z-index:1}
+.contact .section-title{color:#fff}
+.contact .section-lead{color:rgba(255,255,255,.7)}
+.contact-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:46px;
+  margin-top:46px;
+}
+.contact-info{
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(255,255,255,.06);
+  padding:32px;
+}
+.contact-info h3{margin:0 0 18px;font-size:22px}
+.contact-info dl{margin:0}
+.contact-info dt{margin-top:18px;color:var(--gold-2);font-size:12px;font-weight:800;letter-spacing:.12em}
+.contact-info dd{margin:4px 0 0;color:rgba(255,255,255,.82)}
+.contact-form{
+  padding:34px;
+  background:#fff;
+  color:var(--ink);
+  box-shadow:var(--shadow);
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:grid;gap:7px;margin-bottom:16px}
+.field.full{grid-column:1/-1}
+.field label{font-size:13px;font-weight:800;color:var(--navy)}
+.field input,.field textarea,.field select{
+  width:100%;
+  border:1px solid var(--soft);
+  background:#f9fbfc;
+  padding:13px 14px;
+  color:var(--ink);
+  border-radius:0;
+}
+.field textarea{min-height:132px;resize:vertical}
+.form-note{margin:10px 0 0;color:#6b7280;font-size:12px}
+.privacy-consent{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-top:4px;
+  color:#4f5a68;
+  font-size:12px;
+  line-height:1.7;
+}
+.privacy-consent input{width:auto;margin-top:4px;accent-color:var(--navy)}
+.honey-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.submit-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:22px}
+.footer{
+  padding:34px 0;
+  background:#070d16;
+  color:rgba(255,255,255,.52);
+  font-size:12px;
+}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.reveal{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+@media (max-width:900px){
+  .nav-links{display:none}
+  .hero{min-height:auto}
+  .hero-grid{grid-template-columns:1fr;padding:126px 0 54px}
+  .hero-panel{max-width:460px}
+  .trust-grid,.process-grid,.services-grid,.case-layout,.company-grid,.contact-grid,.split{grid-template-columns:1fr}
+  .sticky-copy{position:static}
+  .case-photo{min-height:360px}
+}
+@media (max-width:620px){
+  .wrap{width:min(100% - 32px,1120px)}
+  .nav{min-height:64px}
+  .brand{font-size:14px;min-width:auto}
+  .brand-mark{width:34px;height:34px}
+  .hero h1{font-size:38px}
+  .hero-lead{font-size:15px}
+  section{padding:72px 0}
+  .trust-item{min-height:auto}
+  .image-stack,.form-grid{grid-template-columns:1fr}
+  .image-card,.image-card.small{min-height:260px;margin:0}
+  .process-card{min-height:auto}
+  .service-card{min-height:380px}
+  .case-item{grid-template-columns:1fr}
+  .profile-row{grid-template-columns:1fr;gap:4px}
+  .contact-form{order:-1}
+  .submit-row{display:block}
+  .submit-row .btn{width:100%;margin-top:14px}
+  .footer-inner{display:block}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="有限会社エフネット トップへ">
+      <span class="brand-mark">F</span>
+      <span>有限会社エフネット<small>F-NET CO., LTD.</small></span>
+    </a>
+    <nav class="nav-links" aria-label="主要ナビゲーション">
+      <a href="#business">事業内容</a>
+      <a href="#process">活用の流れ</a>
+      <a href="#cases">活用例</a>
+      <a href="#company">会社概要</a>
+      <a class="nav-cta" href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-bg"><img src="hero-handshake.jpg" alt="都市と握手のビジネスイメージ"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Property Value Creation</p>
+        <h1>眠る不動産を、<br><span>新たな資産へ。</span></h1>
+        <p class="hero-lead">有限会社エフネットは、不動産賃貸業を基盤に、空き家・空室・遊休不動産の可能性を見直し、持続的な収益と地域価値を生み出す新たな資産へとつなげます。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">相談フォームへ</a>
+          <a class="btn btn-ghost" href="#business">事業内容を見る</a>
+        </div>
+      </div>
+      <aside class="hero-panel reveal" aria-label="会社基本情報">
+        <div class="panel-row">
+          <span class="panel-label">Corporate Number</span>
+          <span class="panel-value">6013302001816</span>
+          <span class="panel-note">法人番号</span>
+        </div>
+        <div class="panel-row">
+          <span class="panel-label">Location</span>
+          <span class="panel-value">埼玉県所沢市</span>
+          <span class="panel-note">〒359-1141<br>埼玉県所沢市小手指町1丁目23番6号<br>クリエイトハイム405</span>
+        </div>
+        <div class="panel-row">
+          <span class="panel-label">Business Field</span>
+          <span class="panel-value">不動産賃貸・遊休資産活用</span>
+          <span class="panel-note">空き家・空室・遊休不動産の活用を通じ、長期的な資産価値の向上を目指します。</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="wrap trust-grid">
+      <div class="trust-item"><b>01</b><strong>現況と課題の整理</strong><span>物件の状態、立地、利用状況、周辺環境を確認し、活用に向けた課題を整理します。</span></div>
+      <div class="trust-item"><b>02</b><strong>活用方法の検討</strong><span>賃貸、改修、用途の見直しなど、物件の特性に合った活用方法を検討します。</span></div>
+      <div class="trust-item"><b>03</b><strong>収益性の確認</strong><span>想定賃料、必要経費、改修費、維持管理費などを整理し、無理のない運営方法を考えます。</span></div>
+      <div class="trust-item"><b>04</b><strong>長期的な運営改善</strong><span>長期保有と資産価値の維持・向上を見据えて、運営方法を見直します。</span></div>
+    </div>
+  </div>
+
+  <section id="business">
+    <div class="wrap split">
+      <div class="sticky-copy reveal">
+        <p class="eyebrow">Business</p>
+        <h2 class="section-title">不動産賃貸を軸に、<br>資産の新たな可能性を引き出す。</h2>
+        <p class="section-lead">空き家、空室、長期間使われていない物件など、十分に価値を活かしきれていない不動産は、活用方法を見直すことで新たな可能性を生み出します。有限会社エフネットは、不動産賃貸業で培った経験を基盤に、物件の現状や地域特性、周辺需要を踏まえ、賃貸運営、改修、募集条件、長期活用の観点から、活用方法を検討します。</p>
+        <p class="statement">不動産を単に所有するだけの資産ではなく、人が住み、働き、利用することで継続的な価値を生み出す資産へ。物件ごとの可能性と丁寧に向き合い、長期的な資産価値の向上につなげます。</p>
+      </div>
+      <div class="image-stack reveal">
+        <div class="image-card"><img src="banner-executive.jpg" alt="資料を確認するビジネスパーソン"></div>
+        <div class="image-card small"><img src="service-blueprint.jpg" alt="不動産調査と設計図面のイメージ"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="process">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Utilization Flow</p>
+        <h2 class="section-title">現状を知り、可能性を見極め、<br>新たな活用へつなげる。</h2>
+        <p class="section-lead">物件の現状や所有者の意向を確認し、地域特性、周辺需要、必要な整備、想定収支などを段階的に整理しながら、無理のない活用方法を検討します。</p>
+      </div>
+      <div class="process-grid reveal">
+        <article class="process-card">
+          <div class="num">01</div>
+          <h3>現況確認</h3>
+          <p>物件の立地、建物状態、現在の利用状況、周辺環境などを確認し、活用に向けた課題を整理します。</p>
+        </article>
+        <article class="process-card">
+          <div class="num">02</div>
+          <h3>活用方針の検討</h3>
+          <p>賃貸化、改修、用途変更、募集条件の見直しなど、物件の特性に応じた活用方法を検討します。</p>
+        </article>
+        <article class="process-card">
+          <div class="num">03</div>
+          <h3>収支の整理</h3>
+          <p>想定賃料、改修費、維持管理費、運営費などを確認し、継続可能な収支の見通しを整理します。</p>
+        </article>
+        <article class="process-card">
+          <div class="num">04</div>
+          <h3>運営と改善</h3>
+          <p>活用開始後も、入居状況や市場環境に合わせて募集条件や管理方法を見直し、安定した運営につなげます。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Services</p>
+        <h2 class="section-title">主な事業内容</h2>
+        <p class="section-lead">不動産賃貸業を基盤に、空き家・空室・遊休不動産の活用と、長期的な資産価値の維持・向上に取り組んでいます。</p>
+      </div>
+      <div class="services-grid reveal">
+        <article class="service-card">
+          <img src="service-construction.jpg" alt="不動産の維持管理イメージ">
+          <div class="service-content">
+            <span>REAL ESTATE LEASING</span>
+            <h3>不動産賃貸事業</h3>
+            <p>マンション、戸建住宅、テナント、事務所などの賃貸運営を通じて、安定した収益の確保と、安心して利用できる環境づくりに取り組みます。</p>
+          </div>
+        </article>
+        <article class="service-card">
+          <img src="case-akiya.jpg" alt="戸建住宅の活用イメージ">
+          <div class="service-content">
+            <span>VACANT PROPERTY UTILIZATION</span>
+            <h3>空き家・空室対策</h3>
+            <p>長期間使われていない空き家や空室について、物件状態、周辺需要、必要な改修、募集条件などを見直し、新たな活用可能性を検討します。</p>
+          </div>
+        </article>
+        <article class="service-card">
+          <img src="case-handshake2.jpg" alt="住宅模型を前に活用方法を話し合う様子">
+          <div class="service-content">
+            <span>PROPERTY UTILIZATION</span>
+            <h3>遊休不動産の活用</h3>
+            <p>十分に活用されていない不動産について、賃貸化や用途の見直し、運営方法の改善などを検討し、継続的な価値を生み出す資産へつなげます。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" class="case-section">
+    <div class="wrap case-layout">
+      <div class="case-photo reveal"><img src="initiative-houses.jpg" alt="住宅地と地域資産のイメージ"></div>
+      <div class="reveal">
+        <p class="eyebrow">Utilization Examples</p>
+        <h2 class="section-title">物件の課題に合わせた、<br>新たな活用の可能性。</h2>
+        <p class="section-lead">空き家、空室、稼働率の低い物件など、不動産が抱える課題はさまざまです。物件の状態や地域の需要に合わせ、活用方法を検討します。</p>
+        <div class="case-list">
+          <article class="case-item">
+            <b>01</b>
+            <div><h3>長期空室となっているマンション</h3><p>周辺の賃料相場、入居者ニーズ、設備、募集条件を見直し、入居につながりやすい賃貸運営方法を検討します。</p></div>
+          </article>
+          <article class="case-item">
+            <b>02</b>
+            <div><h3>使用予定のない戸建住宅</h3><p>建物状態や改修費、周辺の賃貸需要を確認し、戸建賃貸など新たな活用方法を検討します。</p></div>
+          </article>
+          <article class="case-item">
+            <b>03</b>
+            <div><h3>稼働率が低下したテナント物件</h3><p>想定する利用者、賃料、用途、契約条件などを見直し、物件特性を活かした活用方法を検討します。</p></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="company">
+    <div class="wrap company-grid">
+      <div class="reveal">
+        <p class="eyebrow">Company</p>
+        <h2 class="section-title">会社概要</h2>
+        <p class="section-lead">有限会社エフネットは、不動産賃貸業を基盤に、空き家・空室・遊休不動産の活用を通じて、長期的な資産価値の向上に取り組んでいます。</p>
+        <dl class="profile-box">
+          <div class="profile-row"><dt>会社名</dt><dd>有限会社エフネット</dd></div>
+          <div class="profile-row"><dt>英文表記</dt><dd>F-NET CO., LTD.</dd></div>
+          <div class="profile-row"><dt>法人番号</dt><dd>6013302001816</dd></div>
+          <div class="profile-row"><dt>所在地</dt><dd>〒359-1141<br>埼玉県所沢市小手指町1丁目23番6号 クリエイトハイム405</dd></div>
+          <div class="profile-row"><dt>事業内容</dt><dd>不動産賃貸業、空き家・空室対策、遊休不動産の活用</dd></div>
+        </dl>
+      </div>
+      <aside class="policy-box reveal">
+        <h3>不動産活用で大切にすること</h3>
+        <ul class="policy-list">
+          <li>物件ごとの状態や地域特性を丁寧に確認し、画一的ではない活用方法を検討します。</li>
+          <li>過大な投資や無理な収益計画を避け、長期的に継続できる運営を重視します。</li>
+          <li>利用する方の安心と快適性を考え、適切な維持管理と住環境づくりに取り組みます。</li>
+          <li>不動産活用を通じて、地域の空き家問題や遊休資産の有効活用に貢献します。</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Contact</p>
+        <h2 class="section-title">お問い合わせ</h2>
+        <p class="section-lead">空き家、空室、遊休不動産の活用や、賃貸運営の見直しについて、まずは対象物件の状況とご相談内容をお知らせください。</p>
+      </div>
+      <div class="contact-grid reveal">
+        <aside class="contact-info">
+          <h3>ご相談時にお知らせいただきたい内容</h3>
+          <dl>
+            <dt>対象物件</dt>
+            <dd>所在地、建物種別、築年数、現在の利用状況</dd>
+            <dt>現在の課題</dt>
+            <dd>空室、空き家、未使用、収益性の低下、老朽化など</dd>
+            <dt>ご希望</dt>
+            <dd>賃貸化、改修、運営改善、活用方法の検討など</dd>
+            <dt>希望時期</dt>
+            <dd>現地確認や相談開始を希望する時期</dd>
+          </dl>
+        </aside>
+        <form class="contact-form" action="https://formsubmit.co/fnet.businessdomain@gmail.com" method="POST" accept-charset="UTF-8">
+          <input type="hidden" name="_subject" value="【有限会社エフネット】Webサイトからのお問い合わせ">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://fnet-biz.github.io/thanks.html">
+          <input class="honey-field" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">お名前</label>
+              <input id="name" name="お名前" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="company">会社名・団体名</label>
+              <input id="company" name="会社名・団体名" type="text" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="email">メールアドレス</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="phone">電話番号</label>
+              <input id="phone" name="電話番号" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="category">ご相談種別</label>
+              <select id="category" name="ご相談種別" required>
+                <option value="">選択してください</option>
+                <option>空き家の活用について</option>
+                <option>空室対策について</option>
+                <option>遊休不動産の活用について</option>
+                <option>賃貸運営の見直しについて</option>
+                <option>その他</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="property-address">対象物件の所在地</label>
+              <input id="property-address" name="対象物件の所在地" type="text" autocomplete="street-address">
+            </div>
+            <div class="field">
+              <label for="building-type">建物種別</label>
+              <input id="building-type" name="建物種別" type="text" placeholder="戸建住宅、マンションなど">
+            </div>
+            <div class="field">
+              <label for="current-use">現在の利用状況</label>
+              <input id="current-use" name="現在の利用状況" type="text" placeholder="空き家、空室、使用中など">
+            </div>
+            <div class="field full">
+              <label for="preferred-timing">希望時期</label>
+              <input id="preferred-timing" name="希望時期" type="text" placeholder="例：3か月以内、時期未定">
+            </div>
+            <div class="field full">
+              <label for="message">ご相談内容</label>
+              <textarea id="message" name="ご相談内容" required placeholder="対象物件の状況、相談したい内容、希望時期など"></textarea>
+            </div>
+            <div class="field full">
+              <label class="privacy-consent">
+                <input type="checkbox" name="個人情報の取扱いへの同意" value="同意する" required>
+                <span>入力した個人情報が、お問い合わせへの回答および連絡のために利用されることに同意します。</span>
+              </label>
+            </div>
+          </div>
+          <div class="submit-row">
+            <p class="form-note">送信時に迷惑送信防止の確認画面が表示される場合があります。</p>
+            <button class="btn btn-primary" type="submit">入力内容を送信</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 2026 有限会社エフネット All Rights Reserved.</span>
+    <span>F-NET CO., LTD. / Corporate Number 6013302001816</span>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("in");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach((el)=>observer.observe(el));
+</script>
+</body>
+</html>
